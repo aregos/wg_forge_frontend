@@ -20,5 +20,14 @@ module.exports = {
     before: function(app, server) {
       app.use("/api", express.static(path.join(__dirname, "data")));
     }
-  }
+  },
+    module: {
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
+        ]
+    }
 };
