@@ -15,3 +15,7 @@ export const formatCardNumber = (cardNumber) => {
     const formattedNumber = cardNumber.slice(0, 2) + '**********' + cardNumber.slice(-4);
     return formattedNumber;
 }
+
+export const getUserInfo = (user) => {
+    return `${user.gender === 'Male' ? 'Mr.' : 'Ms.'} ${user.first_name} ${user.last_name}`;
+}

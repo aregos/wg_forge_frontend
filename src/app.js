@@ -1,6 +1,7 @@
 // this is an example of improting data from JSON
 import orders from '../data/orders.json';
-import {formatCardNumber, formatDate} from "./utils";
+import users from '../data/users.json';
+import {formatCardNumber, formatDate, getUserInfo} from "./utils";
 
 const createTable = () => {
     return `
@@ -21,7 +22,9 @@ const createTable = () => {
       .map((order) => `
         <tr id=${`order_${order.id}`}>
             <td>${order.transaction_id}</td>
-            <td class="user_data">${order.user_id}</td>
+            <td class="user-data">
+                <a href="#">${getUserInfo(users.find(user => user.id === order.user_id))}</a>
+            </td>
             <td>${formatDate(order.created_at)}</td>
             <td>\$${order.total}</td>
             <td>${formatCardNumber(order.card_number)}</td>
