@@ -1,0 +1,18 @@
+* {
+}
+
+table tr td {
+    border: 1px solid black;
+}
+
+.user-details {
+    display: none;
+}
+
+.user-details img {
+    max-width: 100px;
+}
+
+.user-details.visible {
+    display: block;
+}
